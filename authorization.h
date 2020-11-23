@@ -15,6 +15,9 @@ public:
     explicit authorization(QWidget *parent = nullptr);
     ~authorization();
 
+private slots:
+    void on_confirm_clicked();
+
 private:
     Ui::authorization *ui;
 };
