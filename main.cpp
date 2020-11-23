@@ -6,7 +6,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    QIcon winIcon("C:\\Users\\User\\Desktop\\SalarySI\\source\\pic\\ico.ico");
+    QIcon winIcon("C:\\Users\\User\\Desktop\\SalaryIS\\source\\pic\\ico.ico");
 
     authorization window;
     window.setWindowIcon(winIcon);
