@@ -19,6 +19,8 @@ SOURCES += \
     add_employee.cpp \
     add_ill.cpp \
     authorization.cpp \
+    edit_employee.cpp \
+    edit_ill.cpp \
     main.cpp \
     mainwindow.cpp
 
@@ -26,12 +28,16 @@ HEADERS += \
     add_employee.h \
     add_ill.h \
     authorization.h \
+    edit_employee.h \
+    edit_ill.h \
     mainwindow.h
 
 FORMS += \
     add_employee.ui \
     add_ill.ui \
     authorization.ui \
+    edit_employee.ui \
+    edit_ill.ui \
     mainwindow.ui
 
 TRANSLATIONS += \
