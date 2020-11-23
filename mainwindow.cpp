@@ -1,5 +1,10 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "add_employee.h"
+#include "add_ill.h"
+#include "edit_employee.h"
+#include "edit_ill.h"
+
 #include <QtDebug>
 #include <QSqlDatabase>
 #include <QtSql>
@@ -8,11 +13,13 @@
 #include <QMessageBox>
 #include <QSqlQueryModel>
 
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    update_table();
 }
 
 MainWindow::~MainWindow()
@@ -27,4 +34,41 @@ void MainWindow::on_action_7_triggered()
     str += "WRWco";
     str += char(0xAE);
     QMessageBox::information(this, "О программе", str);
+}
+
+void MainWindow::on_action_4_triggered()
+{
+    //QIcon winIcon("C:\\Users\\User\\Desktop\\untitled1\\source\\pic\\ico.ico");
+        add_employee *window;
+        window = new add_employee(this);
+        //window->setWindowIcon(winIcon);
+        window->setModal(true);
+        window->show();
+        int ex = window->exec();
+        if (ex == 1)
+            update_table();
+        qDebug() << "govno";
+}
+
+
+
+void MainWindow:: update_table(){
+    QSqlDatabase db = QSqlDatabase::addDatabase("QODBC");
+    qDebug() << db.drivers();
+    db.setDatabaseName("DRIVER={Microsoft Access Driver (*.mdb)};FIL={MS Access};DBQ=C:\\Users\\User\\Desktop\\SalaryIS\\source\\db\\db_bookkeeping.mdb");
+    if(db.open()){
+        model_1 = new QSqlTableModel(this, db);
+        model_1->setTable("Сотрудники");
+        model_1->select();
+        ui->tableView->setModel(model_1);
+
+        model_2 = new QSqlTableModel(this, db);
+        model_2->setTable("Заболевания");
+        model_2->select();
+        ui->tableView_2->setModel(model_2);
+
+        model_3 = new QSqlQueryModel;
+        model_3->setQuery("SELECT Фамилия, Имя, Отчество, [Период оплаты], [Итого к выдаче] FROM Выплаты LEFT JOIN Сотрудники ON Сотрудники.[Личный номер]=Выплаты.[Личный номер]");
+        ui->tableView_3->setModel(model_3);
+    }
 }

@@ -2,7 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-
+#include <QSqlTableModel>
+#include <QSqlQueryModel>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -16,10 +17,19 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+
 private slots:
     void on_action_7_triggered();
 
+    void on_action_4_triggered();
+
+    void update_table();
+
 private:
     Ui::MainWindow *ui;
+    QSqlTableModel *model_1;
+    QSqlTableModel *model_2;
+    QSqlQueryModel *model_3;
+
 };
 #endif // MAINWINDOW_H
