@@ -25,10 +25,12 @@ private slots:
 
     void update_table();
 
+    void on_action_5_triggered();
+
 private:
     Ui::MainWindow *ui;
     QSqlTableModel *model_1;
-    QSqlTableModel *model_2;
+    QSqlQueryModel *model_2;
     QSqlQueryModel *model_3;
 
 };

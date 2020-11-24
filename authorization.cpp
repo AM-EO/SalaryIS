@@ -41,11 +41,11 @@ void authorization::on_confirm_clicked()
     qDebug() << error;
     verify(login, pass);
     if (!error){
-        QMessageBox::warning(this, "Автоизация","Нет доступа к серверу");
+        QMessageBox::warning(this, "Ошибка","Потеряна связь с сервером");
     }else if (1/*verify(login, pass) == 1*/){
         this->done(1);
         this->close();
     } else {
-        QMessageBox::critical(this, "Автоизация","Неверный логин или пароль");
+        QMessageBox::critical(this, "Ошибка","Неверный логин или пароль");
     }
 }

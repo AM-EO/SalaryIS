@@ -38,16 +38,13 @@ void MainWindow::on_action_7_triggered()
 
 void MainWindow::on_action_4_triggered()
 {
-    //QIcon winIcon("C:\\Users\\User\\Desktop\\untitled1\\source\\pic\\ico.ico");
-        add_employee *window;
-        window = new add_employee(this);
-        //window->setWindowIcon(winIcon);
-        window->setModal(true);
-        window->show();
-        int ex = window->exec();
-        if (ex == 1)
-            update_table();
-        qDebug() << "govno";
+    add_employee *window;
+    window = new add_employee(this);
+    window->setModal(true);
+    window->show();
+    int ex = window->exec();
+    if (ex == 1)
+        update_table();
 }
 
 
@@ -62,13 +59,23 @@ void MainWindow:: update_table(){
         model_1->select();
         ui->tableView->setModel(model_1);
 
-        model_2 = new QSqlTableModel(this, db);
-        model_2->setTable("Заболевания");
-        model_2->select();
+        model_2 = new QSqlQueryModel();
+        model_2->setQuery("SELECT Фамилия, Имя, Отчество, Период, [Дата заболевания], [Дата выздоровления] FROM Больничные LEFT JOIN Сотрудники ON Сотрудники.[Личный номер]=Больничные.[Личный номер]");
         ui->tableView_2->setModel(model_2);
 
         model_3 = new QSqlQueryModel;
         model_3->setQuery("SELECT Фамилия, Имя, Отчество, [Период оплаты], [Итого к выдаче] FROM Выплаты LEFT JOIN Сотрудники ON Сотрудники.[Личный номер]=Выплаты.[Личный номер]");
         ui->tableView_3->setModel(model_3);
     }
+}
+
+void MainWindow::on_action_5_triggered()
+{
+    add_ill *window;
+    window = new add_ill(this);
+    window->setModal(true);
+    window->show();
+    int ex = window->exec();
+    if (ex == 1)
+        update_table();
 }

@@ -260,6 +260,16 @@
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>lastname</tabstop>
+  <tabstop>firstname</tabstop>
+  <tabstop>secondname</tabstop>
+  <tabstop>period</tabstop>
+  <tabstop>startill</tabstop>
+  <tabstop>endill</tabstop>
+  <tabstop>confirm</tabstop>
+  <tabstop>cancel</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
