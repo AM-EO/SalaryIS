@@ -79,3 +79,15 @@ void MainWindow::on_action_5_triggered()
     if (ex == 1)
         update_table();
 }
+
+void MainWindow::on_action_triggered()
+{
+    //редакировать сотрудника
+    edit_employee *window;
+    window = new edit_employee(this);
+    window->setModal(true);
+    window->show();
+    int ex = window->exec();
+    if (ex == 1)
+        update_table();
+}

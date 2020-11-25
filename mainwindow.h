@@ -27,6 +27,8 @@ private slots:
 
     void on_action_5_triggered();
 
+    void on_action_triggered();
+
 private:
     Ui::MainWindow *ui;
     QSqlTableModel *model_1;
