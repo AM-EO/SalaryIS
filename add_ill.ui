@@ -73,6 +73,9 @@
      <pointsize>14</pointsize>
     </font>
    </property>
+   <property name="editable">
+    <bool>true</bool>
+   </property>
   </widget>
   <widget class="QPushButton" name="confirm">
    <property name="geometry">
@@ -100,6 +103,9 @@
     <font>
      <pointsize>14</pointsize>
     </font>
+   </property>
+   <property name="editable">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QLabel" name="label_3">
@@ -181,7 +187,7 @@
     </font>
    </property>
    <property name="editable">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <property name="currentIndex">
     <number>-1</number>

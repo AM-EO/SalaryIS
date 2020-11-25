@@ -22,7 +22,8 @@ SOURCES += \
     edit_employee.cpp \
     edit_ill.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    my_query.cpp
 
 HEADERS += \
     add_employee.h \
@@ -30,7 +31,8 @@ HEADERS += \
     authorization.h \
     edit_employee.h \
     edit_ill.h \
-    mainwindow.h
+    mainwindow.h \
+    my_query.h
 
 FORMS += \
     add_employee.ui \

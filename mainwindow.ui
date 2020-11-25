@@ -36,7 +36,7 @@
      </sizepolicy>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab">
      <property name="statusTip">
@@ -106,7 +106,7 @@
      <x>0</x>
      <y>0</y>
      <width>1920</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">
@@ -121,8 +121,15 @@
      <addaction name="action_5"/>
      <addaction name="action_6"/>
     </widget>
+    <widget class="QMenu" name="menu_5">
+     <property name="title">
+      <string>Редактировать</string>
+     </property>
+     <addaction name="action"/>
+     <addaction name="action_9"/>
+    </widget>
     <addaction name="menu_4"/>
-    <addaction name="action_2"/>
+    <addaction name="menu_5"/>
     <addaction name="action_3"/>
    </widget>
    <widget class="QMenu" name="menu_2">
@@ -141,11 +148,6 @@
    <addaction name="menu_3"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="action_2">
-   <property name="text">
-    <string>Редактировать</string>
-   </property>
-  </action>
   <action name="action_3">
    <property name="text">
     <string>Удалить</string>
@@ -178,6 +180,22 @@
   <action name="action_7">
    <property name="text">
     <string>О программе</string>
+   </property>
+  </action>
+  <action name="action">
+   <property name="text">
+    <string>Сотрудник </string>
+   </property>
+   <property name="toolTip">
+    <string>Сотрудник редактировать </string>
+   </property>
+  </action>
+  <action name="action_9">
+   <property name="text">
+    <string>Больничный</string>
+   </property>
+   <property name="toolTip">
+    <string>Больничный редактировать</string>
    </property>
   </action>
  </widget>
